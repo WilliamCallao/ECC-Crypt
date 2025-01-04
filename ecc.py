@@ -9,10 +9,8 @@ from colorama import init, Fore, Style
 from tqdm import tqdm
 from pick import pick
 
-# Inicializar colorama
 init(autoreset=True)
 
-# Definir la curva elíptica
 curve = registry.get_curve('brainpoolP256r1')
 
 def encrypt_AES_GCM(msg, secretKey):
@@ -50,8 +48,7 @@ def encrypt_filename(filename, key):
     return encrypted + os.path.splitext(filename)[1]  # Mantener la extensión del archivo
 
 def decrypt_filename(encrypted_filename, key):
-    # Esta función es un placeholder. En la práctica, necesitarías una forma de mapear
-    # los nombres encriptados a los originales, ya que la encriptación no es reversible.
+    # placeholder.
     return "decrypted_" + encrypted_filename
 
 def process_files(input_folder, output_folder, key, mode='encrypt'):
@@ -126,7 +123,7 @@ def main_menu():
         options = ['Encrypt files', 'Decrypt files', 'Exit']
         option, index = pick(options, title)
         
-        if index in [0, 1]:  # Encrypt or Decrypt
+        if index in [0, 1]:
             folders = get_folders()
             input_folder = select_folder(folders)
             
@@ -140,7 +137,7 @@ def main_menu():
                 process_files(input_folder, output_folder, pubKey, mode='encrypt')
             else:
                 process_files(input_folder, output_folder, privKey, mode='decrypt')
-        elif index == 2:  # Exit
+        elif index == 2:
             print(Fore.GREEN + "Thank you for using the ECC Encryption/Decryption Tool. Goodbye!")
             break
 
