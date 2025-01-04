@@ -1,0 +1,1 @@
+Este es un archivo de ejemplo para encriptar usando ECC.
