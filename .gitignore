@@ -1,3 +1,5 @@
 
 env/Lib/site-packages/_distutils_hack/__init__.py
 /env
+/build
+/dist
